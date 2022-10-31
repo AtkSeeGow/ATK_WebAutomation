@@ -39,6 +39,3 @@ node_modules/
 !**/app/rxjs.js
 !**/app/lib.builder.js
 !**/app/systemjs.config.js
-
-Source/TicketBots.Python/config.py
-Source/TicketBots.Python/chromedriver.exe

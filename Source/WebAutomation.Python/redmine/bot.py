@@ -1,5 +1,4 @@
 import logging
-import threading
 import traceback
 import csv
 import time
@@ -44,7 +43,7 @@ class Bot():
         password_element.send_keys(self.config.password)
         self.driver.find_element_by_xpath('//*[@id="login-submit"]').click()
 
-        # 讀取要建立資料清單(主旨、工時、日期、分類、標籤)
+        # 讀取要建立資料清單(主旨、工時、年、月、日、分類、標籤)
         with open(self.config.csv_path, newline='', encoding="utf-8") as csv_file:
             rows = csv.reader(csv_file)
             for row in rows:

@@ -1,29 +1,39 @@
 import time
-import requests
 import logging
 import threading
 import traceback
 import ddddocr
-from component.browser_utility import RequestTools
+from selenium import webdriver
 from datetime import datetime
 from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
-from config import Config
+from component.browser_utility import BrowserUtility
+from component.common_utility import CommonUtility
+from hehuanline.config import Config
 
 class Bot():
     def __init__(self, config: Config, driver: RemoteWebDriver):
-        self.config = config;
-        self.request_tools = RequestTools();
-        self.driver = driver;
+        self.config = Config();
+
+        browser_utility = CommonUtility();
+        log_path = browser_utility.log_path;
+
+        browser_utility = BrowserUtility();
+        chrome_options = browser_utility.get_chrome_options();
+        executable_path = browser_utility.executable_path;
+        self.driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options);
+
         self.is_while = True;
         self.judging_success_thread: threading.Thread = None;
         self.judgment_failed_thread: threading.Thread = None;
-        fileHandler = logging.FileHandler(f'{self.config.log_root_path()}\\use_mixed.txt', mode='a')
+
+        fileHandler = logging.FileHandler(log_path, mode='a')
         fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'));
-        self.logger = logging.getLogger("use_mixed");
+        self.logger = logging.getLogger("Bot");
         self.logger.addHandler(fileHandler);
+
         self.terminate_judging_flag();
 
     def terminate_judging_flag(self):
@@ -108,14 +118,16 @@ class Bot():
                 self.terminate_judging_flag();
 
                 self.driver.get(f'https://hehuanline.forest.gov.tw/room/?mode=add&date_start={self.config.ticket_date}')
-                # element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="is-content"]/div/a[1]')))
-                # element.click();
 
-                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[{self.config.room_type}]")))
-
+                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[134]")))
                 select = Select(element)
-                select.select_by_visible_text(f'{self.config.ticket_numbers}')
-                select.select_by_value(f'{self.config.ticket_numbers}')
+                select.select_by_visible_text(f'1')
+                select.select_by_value(f'1')
+
+                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[90]")))
+                select = Select(element)
+                select.select_by_visible_text(f'1')
+                select.select_by_value(f'1')
 
                 self.driver.find_element(By.ID, "button_roomsubmit").click()
 
