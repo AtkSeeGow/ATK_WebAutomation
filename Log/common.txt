@@ -1,0 +1,203 @@
+2022-10-31 17:10:06,204 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:10:06,219 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select.select_by_visible_text(f'Webster Chen')
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 120, in select_by_visible_text
+    self._setSelected(opt)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 212, in _setSelected
+    option.click()
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:11:09,140 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:11:09,144 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select.select_by_visible_text(f'Webster Chen')
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 120, in select_by_visible_text
+    self._setSelected(opt)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 211, in _setSelected
+    if not option.is_selected():
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 155, in is_selected
+    return self._execute(Command.IS_ELEMENT_SELECTED)['value']
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:12:04,949 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:12:04,953 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select.select_by_visible_text(f'Webster Chen')
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 120, in select_by_visible_text
+    self._setSelected(opt)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 212, in _setSelected
+    option.click()
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:12:55,698 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:12:55,703 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select.select_by_visible_text(f'�ڦۤv')
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 117, in select_by_visible_text
+    opts = self._el.find_elements(By.XPATH, xpath)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 684, in find_elements
+    return self._execute(Command.FIND_CHILD_ELEMENTS,
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:13:34,497 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:13:34,502 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select.select_by_value(f'9')
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 82, in select_by_value
+    self._setSelected(opt)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 212, in _setSelected
+    option.click()
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:15:19,358 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:15:19,363 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select = Select(element)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 36, in __init__
+    if webelement.tag_name.lower() != "select":
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 71, in tag_name
+    return self._execute(Command.GET_ELEMENT_TAG_NAME)['value']
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:15:58,534 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:15:58,538 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 66, in execution
+    select = Select(element)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 36, in __init__
+    if webelement.tag_name.lower() != "select":
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 71, in tag_name
+    return self._execute(Command.GET_ELEMENT_TAG_NAME)['value']
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:25:13,268 - Bot - ERROR - is_while error: Message: Cannot locate option with value: 104
+
+2022-10-31 17:25:13,271 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 90, in execution
+    select.select_by_value(row[5])
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 87, in select_by_value
+    raise NoSuchElementException("Cannot locate option with value: %s" % value)
+selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 104
+
+
+2022-10-31 17:36:08,822 - Bot - ERROR - is_while error: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+2022-10-31 17:36:08,825 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 69, in execution
+    select.select_by_visible_text(f'Webster Chen')
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 120, in select_by_visible_text
+    self._setSelected(opt)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 212, in _setSelected
+    option.click()
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
+  (Session info: chrome=107.0.5304.88)
+
+
+2022-10-31 17:39:57,882 - Bot - ERROR - is_while error: Message: 
+
+2022-10-31 17:39:57,886 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 106, in execution
+    element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, '//*[@id="issue_done_ratio"]')))
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+2022-10-31 17:41:16,893 - Bot - ERROR - is_while error: argument of type 'int' is not iterable
+2022-10-31 17:41:16,897 - Bot - ERROR - Traceback (most recent call last):
+  File "C:\Projects\ATK_WebAutomation\Source/WebAutomation.Python\redmine\bot.py", line 108, in execution
+    select.select_by_value(100)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 78, in select_by_value
+    css = "option[value =%s]" % self._escapeString(value)
+  File "C:\Users\atkse\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\select.py", line 219, in _escapeString
+    if '"' in value and "'" in value:
+TypeError: argument of type 'int' is not iterable
+
+2022-10-31 17:44:43,562 - Bot - ERROR - list index out of range
+2022-10-31 17:45:17,667 - Bot - ERROR - list index out of range
+2022-10-31 17:46:28,801 - Bot - ERROR - list index out of range
