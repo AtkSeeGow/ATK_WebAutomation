@@ -14,12 +14,12 @@ class Bot():
     def __init__(self):
         self.config = Config();
 
-        browser_utility = CommonUtility();
-        log_path = browser_utility.log_path;
+        self.commonUtility = CommonUtility();
+        log_path = self.commonUtility.log_path;
 
-        browser_utility = BrowserUtility();
-        chrome_options = browser_utility.get_chrome_options();
-        executable_path = browser_utility.executable_path;
+        self.browser_utility = BrowserUtility();
+        chrome_options = self.browser_utility.get_chrome_options();
+        executable_path = self.browser_utility.executable_path;
         self.driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options);
 
         fileHandler = logging.FileHandler(log_path, mode='a')

@@ -17,12 +17,12 @@ class Bot():
     def __init__(self, config: Config, driver: RemoteWebDriver):
         self.config = Config();
 
-        browser_utility = CommonUtility();
-        log_path = browser_utility.log_path;
+        self.commonUtility = CommonUtility();
+        log_path = self.commonUtility.log_path;
 
-        browser_utility = BrowserUtility();
-        chrome_options = browser_utility.get_chrome_options();
-        executable_path = browser_utility.executable_path;
+        self.browser_utility = BrowserUtility();
+        chrome_options = self.browser_utility.get_chrome_options();
+        executable_path = self.browser_utility.executable_path;
         self.driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options);
 
         self.is_while = True;
@@ -78,11 +78,11 @@ class Bot():
             self.driver.execute_script(f"scroll(0, {len(image_element.screenshot_as_png)});")
             time.sleep(1)
         
-        with open(self.config.captcha_path(), 'wb') as file:
+        with open(self.commonUtility.captcha_path, 'wb') as file:
             file.write(image_element.screenshot_as_png)
 
         ocr = ddddocr.DdddOcr()
-        with open(self.config.captcha_path(), 'rb') as f:
+        with open(self.commonUtility.captcha_path, 'rb') as f:
             img_bytes = f.read()
         verify_code = ocr.classification(img_bytes)
         verify_code = ''.join(ch for ch in verify_code if ch.isalnum())

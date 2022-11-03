@@ -6,10 +6,4 @@ class Config():
         self.ticket_date = "2022-09-28"
         # 開放時間
         self.open_date = "2022-08-30 07:55:00";
-
-    def captcha_path(self):
-        return rf'C:\Logs\{self.account}\captcha.png';
-
-    def log_root_path(self):
-        return rf'C:\Logs\{self.account}'
         
