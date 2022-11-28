@@ -14,7 +14,7 @@ from component.common_utility import CommonUtility
 from hehuanline.config import Config
 
 class Bot():
-    def __init__(self, config: Config, driver: RemoteWebDriver):
+    def __init__(self):
         self.config = Config();
 
         self.commonUtility = CommonUtility();
@@ -75,7 +75,6 @@ class Bot():
         image_element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.XPATH, '//img[@id="siimage"]')))
         while len(image_element.screenshot_as_png) < 800:
             self.logger.debug(f"len(image_element.screenshot_as_png): {len(image_element.screenshot_as_png)}");
-            self.driver.execute_script(f"scroll(0, {len(image_element.screenshot_as_png)});")
             time.sleep(1)
         
         with open(self.commonUtility.captcha_path, 'wb') as file:
@@ -86,6 +85,9 @@ class Bot():
             img_bytes = f.read()
         verify_code = ocr.classification(img_bytes)
         verify_code = ''.join(ch for ch in verify_code if ch.isalnum())
+
+        if verify_code == '最澄碉':
+            raise Exception('驗證碼無法載入，趕快重新再跑一次看看')
 
         verify_code_element.send_keys(verify_code)
         self.logger.debug(f"驗證碼:{verify_code}");
@@ -119,12 +121,7 @@ class Bot():
 
                 self.driver.get(f'https://hehuanline.forest.gov.tw/room/?mode=add&date_start={self.config.ticket_date}')
 
-                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[134]")))
-                select = Select(element)
-                select.select_by_visible_text(f'1')
-                select.select_by_value(f'1')
-
-                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[90]")))
+                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[212]")))
                 select = Select(element)
                 select.select_by_visible_text(f'1')
                 select.select_by_value(f'1')

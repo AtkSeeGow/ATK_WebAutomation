@@ -1,10 +1,13 @@
-import datetime
+import os
+from datetime import datetime
 from selenium.webdriver import ChromeOptions
+
 
 class CommonUtility():
     def __init__(self):
-        date = datetime.strptime(f"{datetime.now()}","%Y%m%d")
-        self.folder_path = rf"C:\Projects\ATK_WebAutomation\Data\{date}"
+        now = datetime.now();
+        strftime = now.strftime("%Y%m%d")
+        self.folder_path = rf"C:\Projects\ATK_WebAutomation\Data\{strftime}"
         if not os.path.isdir(self.folder_path):
             os.makedirs(self.folder_path)
 

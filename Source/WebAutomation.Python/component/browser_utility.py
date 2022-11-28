@@ -6,7 +6,7 @@ class BrowserUtility():
 
     def get_chrome_options(self):
         options = ChromeOptions();
-        options.page_load_strategy = 'normal'
+        options.page_load_strategy = 'none'
         options.add_argument('--enable-automation')
         options.add_argument('--disable-infobars') #
         options.add_argument('--incognito') # 無痕模式
