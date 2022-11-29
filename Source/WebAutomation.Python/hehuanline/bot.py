@@ -121,7 +121,7 @@ class Bot():
 
                 self.driver.get(f'https://hehuanline.forest.gov.tw/room/?mode=add&date_start={self.config.ticket_date}')
 
-                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[212]")))
+                element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[{self.config.room_type}]")))
                 select = Select(element)
                 select.select_by_visible_text(f'1')
                 select.select_by_value(f'1')
