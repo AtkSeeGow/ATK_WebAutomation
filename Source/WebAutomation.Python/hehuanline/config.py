@@ -7,3 +7,4 @@ class Config():
         # 開放時間
         self.open_date = "2022-08-30 07:55:00";
         self.room_type = "170";
+        self.room_count = "1";

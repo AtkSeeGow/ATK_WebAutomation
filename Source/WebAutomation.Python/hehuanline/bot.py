@@ -67,6 +67,27 @@ class Bot():
             except Exception as e:
                 self.logger.error(f"judgment_failed error: {e}")
 
+    def judgment_login(self):
+        if "login" in self.driver.current_url:
+            return False;
+        else:
+            return True;
+
+    def action_login(self):
+        self.driver.get(f"https://hehuanline.forest.gov.tw/user/?mode=login")
+
+        # 帳號密碼的登入
+        account_element = self.driver.find_element_by_xpath('//*[@id="is_uu"]')
+        account_element.clear()
+        account_element.send_keys(self.config.account)
+        password_element = self.driver.find_element_by_xpath('//*[@id="is_pp"]')
+        password_element.clear()
+        password_element.send_keys(self.config.password)
+        self.driver.find_element_by_xpath('//*[@id="login-form-submit"]').click()
+
+        self.driver.get(r'https://hehuanline.forest.gov.tw/room/')
+        return;
+
     def input_verify_code(self):
         verify_code_element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.ID, "verify_code")))
         verify_code_element.click();
@@ -102,29 +123,20 @@ class Bot():
         self.driver.implicitly_wait(1);
         self.driver.set_page_load_timeout(15);
         self.driver.set_script_timeout(15);
-        self.driver.get(f"https://hehuanline.forest.gov.tw/user/?mode=login")
-
-        # 帳號密碼的登入
-        account_element = self.driver.find_element_by_xpath('//*[@id="is_uu"]')
-        account_element.clear()
-        account_element.send_keys(self.config.account)
-        password_element = self.driver.find_element_by_xpath('//*[@id="is_pp"]')
-        password_element.clear()
-        password_element.send_keys(self.config.password)
-        self.driver.find_element_by_xpath('//*[@id="login-form-submit"]').click()
-
-        self.driver.get(r'https://hehuanline.forest.gov.tw/room/')
 
         while self.is_while:
             try:
-                self.terminate_judging_flag();
-
                 self.driver.get(f'https://hehuanline.forest.gov.tw/room/?mode=add&date_start={self.config.ticket_date}')
+
+                while not self.judgment_login():
+                    self.action_login();
+
+                self.terminate_judging_flag();
 
                 element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.NAME, f"num[{self.config.room_type}]")))
                 select = Select(element)
-                select.select_by_visible_text(f'1')
-                select.select_by_value(f'1')
+                select.select_by_visible_text(f'{self.config.room_count}')
+                select.select_by_value(f'{self.config.room_count}')
 
                 self.driver.find_element(By.ID, "button_roomsubmit").click()
 
