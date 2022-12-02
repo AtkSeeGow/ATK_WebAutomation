@@ -84,7 +84,9 @@ class Bot():
         self.driver.find_element_by_xpath('//*[@id="login-form-submit"]').click()
 
     def input_verify_code(self):
-        verify_code_element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.ID, "verify_code")))
+        verify_code_element = WebDriverWait(self.driver, 15).until(EC.presence_of_element_located((By.ID, "verify_code")))
+        if not verify_code_element.is_displayed():
+            return;
         verify_code_element.click();
 
         self.logger.debug(f"驗證碼解析");
