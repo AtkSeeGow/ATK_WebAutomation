@@ -74,8 +74,6 @@ class Bot():
             return True;
 
     def action_login(self):
-        self.driver.get(f"https://hehuanline.forest.gov.tw/user/?mode=login")
-
         # 帳號密碼的登入
         account_element = self.driver.find_element_by_xpath('//*[@id="is_uu"]')
         account_element.clear()
@@ -84,9 +82,6 @@ class Bot():
         password_element.clear()
         password_element.send_keys(self.config.password)
         self.driver.find_element_by_xpath('//*[@id="login-form-submit"]').click()
-
-        self.driver.get(r'https://hehuanline.forest.gov.tw/room/')
-        return;
 
     def input_verify_code(self):
         verify_code_element = WebDriverWait(self.driver, 15).until(EC.visibility_of_element_located((By.ID, "verify_code")))
