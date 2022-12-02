@@ -173,3 +173,4 @@ class Bot():
                 self.logger.error(f"is_while error: {e}")
                 self.logger.error(traceback.format_exc())
                 self.terminate_judging_flag();
+                time.sleep(1);
